@@ -1,0 +1,171 @@
+{
+    "codigoError": 0,
+    "errores": [],
+    "datos": [
+        {
+            "Table": [
+                {
+
+							"Folio": 12256,
+							"EspacioPxPasos": 5,
+							"Pasos": [
+								{
+									"ID": "AB9767D3-05F9-4CCF-8A7A-350832275F99",
+									"Orden": 1,
+									"Nombre": "Servicio",
+									"Deshabilitado": false,
+									"Categoría": "Aire Acondicionado",
+									"TipoServicio": "Instalación",
+									"SubtipoServicio": "RVI",
+									"EspacioPxSubpasos": 5,
+									"SubPasos": [
+										{
+											"ID": "73265A45-AEE6-4C85-80AF-FAED1E85FEF3",
+											"Orden": 1,
+											"Nombre": "Información del Producto",
+											"Deshabilitado": false,
+											"EspacioPxControles": 4,
+											"ControlesForma": [
+												{
+													"ID": "FE81C2EC-D8C6-4192-B1D8-882FC93F5289",
+													"Orden": 1,
+													"Nombre": "txtItemnmbr",
+													"ValorDefault": "",
+													"Valor": "",
+													"Tipo": "Texto",
+													"Etiqueta": "ID Artículo",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "372B8604-6ECD-46B6-92ED-2B8A6B5A2ED7",
+													"Orden": 2,
+													"Nombre": "lblItemdesc",
+													"ValorDefault": "CONDENSADORA TIPO MINISPLIT 2 TON S/F 220V",
+													"Valor": "",
+													"Tipo": "Etiqueta",
+													"Etiqueta": "Descripción Artículo",
+													"Requerido": true,
+													"SoloLectura": true
+												},
+												{
+													"ID": "74995EBC-2E44-4D97-A024-005EADCDAD0A",
+													"Orden": 3,
+													"Nombre": "imgImagen",
+													"ValorDefault": "(url=https://cdn.mirage.mx/postventa/xrfull1.jpeg) o base64==?",
+													"Valor": "base64==",
+													"url": "https://cdn.mirage.mx/postventa/xrfull1.jpeg",
+													"Tipo": "Imagen",
+													"Etiqueta": "Imagen del artículo",
+													"Requerido": false,
+													"SoloLectura": true
+												},
+												{
+													"ID": "B0D9DF3E-BF00-4BED-8A6C-6E247B4FEBC8",
+													"Orden": 4,
+													"Nombre": "numPrecio",
+													"Valor": "3,578.60",
+													"Tipo": "Numero",
+													"Etiqueta": "Precio del artículo",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "774F9618-F350-425D-817D-3C627A92F475",
+													"Orden": 5,
+													"Nombre": "camEvidencias",
+													"ValorDefault": "",
+													"Valor": [
+														"archivo1_b64",
+														"archivo2_b64",
+														"archivo3_b64"
+													],
+													"Tipo": "Camara/Imagen",
+													"Etiqueta": "Evidencias de instalación",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "07DDCCB6-5AC1-423F-B3B4-F4FF5CDDBAF4",
+													"Orden": 6,
+													"Nombre": "cdCodigoBarraCondensador",
+													"ValorDefault": "",
+													"Valor": "012767012204042769",
+													"Tipo": "CodigoBarras",
+													"Etiqueta": "Escanear código de barras",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "C16A4569-B4E2-4B73-81B8-77D192842F88",
+													"Orden": 7,
+													"Nombre": "chkEsGarantia",
+													"ValorDefault": false,
+													"Valor": null,
+													"Tipo": "Checkbox",
+													"Etiqueta": "Aplica garantía?",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "C16A4569-B4E2-4B73-81B8-77D192842F88",
+													"Orden": 8,
+													"Nombre": "cboAlmacen",
+													"ValorDefault": [
+														{
+															"Id": "",
+															"Descripcion": "--Seleccione--"
+														},
+														{
+															"Id": "01MTY",
+															"Descripcion": "Monterrey"
+														},
+														{
+															"Id": "01GDL",
+															"Descripcion": "Guadalajara",
+															"Seleccionado": true
+														},
+														{
+															"Id": "01TJ",
+															"Descripcion": "Tijuana"
+														}
+													],
+													"Valor": null,
+													"Tipo": "Dropdown",
+													"Etiqueta": "Almacen",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "EE5ADD35-EDED-404F-A170-3C09A0677108",
+													"Orden": 9,
+													"Nombre": "calExtra",
+													"ValorDefault": 0,
+													"Valor": null,
+													"Tipo": "Calificacion",
+													"Etiqueta": "Calificación",
+													"Requerido": true,
+													"SoloLectura": false
+												},
+												{
+													"ID": "EE5ADD35-EDED-404F-A170-3C09A0677108",
+													"Orden": 10,
+													"Nombre": "ddDoodle",
+													"ValorDefault": "base64img==",
+													"Valor": "base64img==",
+													"Tipo": "Doodle",
+													"Etiqueta": "Firma",
+													"Requerido": true,
+													"SoloLectura": false
+												}
+											]
+										}
+									]
+								}
+							]
+
+                }
+            ]
+        }
+    ]
+}
