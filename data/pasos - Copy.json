@@ -33,17 +33,6 @@
                             "SoloLectura": false
                         },
                         {
-                            "ID": "FE81C2EC-D8C6-4192-B1D8-882FC93F5288",
-                            "Orden": 1,
-                            "Nombre": "txtItemnmbr",
-                            "ValorDefault": "",
-                            "Valor": "",
-                            "Tipo": "Texto",
-                            "Etiqueta": "Campo Nuevo",
-                            "Requerido": true,
-                            "SoloLectura": false
-                        },
-                        {
                             "ID": "372B8604-6ECD-46B6-92ED-2B8A6B5A2ED7",
                             "Orden": 2,
                             "Nombre": "lblItemdesc",
