@@ -19,12 +19,14 @@ var hashNumSubPasos = {};
 var hashmapSubPasos = {};
 var hashNumControles = {};
 
+$('#exito-paso').hide();
+$('#exito-subpaso').hide();
+$('#exito-control').hide();
+
 ref.on('value', (snapshot) => {
     const data = snapshot.val();
 
     snapshot.forEach(element => {
-        numPasos++;
-
         let id = element.val().ID;
         let nombre = element.val().Nombre;
         let elementoYaEstaEnOpciones = false;
@@ -33,11 +35,12 @@ ref.on('value', (snapshot) => {
             let option_value = option_element.value;
 
             if (option_value == id) {
-                elementoYaEstaEnOpciones = true
+                elementoYaEstaEnOpciones = true;
             }
         });
 
         if (!elementoYaEstaEnOpciones) {
+            numPasos++;
             $('#paso').append(new Option(nombre, id));
             $('#pasoControl').append(new Option(nombre, id));
             hashmapPasos[id] = numPasos - 1;
@@ -49,7 +52,6 @@ ref.on('value', (snapshot) => {
             let numSubPasos = 0;
 
             subPasos.forEach(subPaso => {
-                numSubPasos++;
                 let nombre = subPaso.Nombre;
                 let id = subPaso.ID;
 
@@ -58,11 +60,12 @@ ref.on('value', (snapshot) => {
                     let option_value = option_element.value;
 
                     if (option_value == id) {
-                        subPasoYaEstaEnOpciones = true
+                        subPasoYaEstaEnOpciones = true;
                     }
                 });
 
                 if (!subPasoYaEstaEnOpciones) {
+                    numSubPasos++;
                     $('#subpaso').append(new Option(nombre, id));
                     hashmapSubPasos[id] = numSubPasos - 1;
                 }
@@ -103,6 +106,9 @@ function crearPaso() {
         SubtipoServicio: "RVI",
         EspacioPxSubpasos: 5,
     });
+
+    $('#exito-paso').show();
+    $('#exito-paso').delay(3200).fadeOut(300);
 }
 
 function crearSubpaso() {
@@ -121,6 +127,8 @@ function crearSubpaso() {
         EspacioPxControles: 4,
     });
 
+    $('#exito-subpaso').show();
+    $('#exito-subpaso').delay(3200).fadeOut(300);
 }
 
 function crearControl() {
@@ -148,4 +156,7 @@ function crearControl() {
         Requerido: true,
         SoloLectura: false
     });
+
+    $('#exito-control').show();
+    $('#exito-control').delay(3200).fadeOut(300);
 }
