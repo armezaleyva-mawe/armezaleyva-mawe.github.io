@@ -1,14 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake API</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/datepicker/tempusdominus-bootstrap-4.css" />
+    <link rel="stylesheet" href="assets/vendor/inputmask/css/inputmask.css" />
 </head>
 
 <body>
-    Hola
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <div class="row">
+                    <div class="col-xl-10">
+                        <!-- ============================================================== -->
+                        <!-- basic form  -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="section-block" id="basicform">
+                                    <h3 class="section-title">Nuevo Paso</h3>
+                                </div>
+                                <div class="card">
+                                    <h5 class="card-header">Crear Paso</h5>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="nombrePaso" class="col-form-label">Nombre:</label>
+                                                <input id="nombrePaso" type="text" class="form-control">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="section-block" id="basicform">
+                                    <h3 class="section-title">Nuevo Subpaso</h3>
+                                </div>
+                                <div class="card">
+                                    <h5 class="card-header">Crear Subpaso</h5>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="paso">Paso:</label>
+                                                <select class="form-control" id="paso">
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nombreSubpaso" class="col-form-label">Nombre:</label>
+                                                <input id="nombreSubpaso" type="text" class="form-control">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="section-block" id="basicform">
+                                    <h3 class="section-title">Nuevo Control de Forma</h3>
+                                </div>
+                                <div class="card">
+                                    <h5 class="card-header">Crear Control de Forma</h5>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="subpaso">Subpaso:</label>
+                                                <select class="form-control" id="subpaso">
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-select">Tipo:</label>
+                                                <select class="form-control" id="input-select">
+                                                    <option>Texto</option>
+                                                    <option>Etiqueta</option>
+                                                    <option>Numero</option>
+                                                    <option>Camara/Imagen</option>
+                                                    <option>Checkbox</option>
+                                                    <option>Calificacion</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="etiquetaControl" class="col-form-label">Etiqueta:</label>
+                                                <input id="etiquetaControl" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="valorControl" class="col-form-label">Valor:</label>
+                                                <input id="valorControl" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="valorDefaultControl" class="col-form-label">Valor default:</label>
+                                                <input id="valorDefaultControl" type="text" class="form-control">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/libs/js/main-js.js"></script>
+    <script src="assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(function(e) {
+            "use strict";
+            $(".date-inputmask").inputmask("dd/mm/yyyy"),
+                $(".phone-inputmask").inputmask("(999) 999-9999"),
+                $(".international-inputmask").inputmask("+9(999)999-9999"),
+                $(".xphone-inputmask").inputmask("(999) 999-9999 / x999999"),
+                $(".purchase-inputmask").inputmask("aaaa 9999-****"),
+                $(".cc-inputmask").inputmask("9999 9999 9999 9999"),
+                $(".ssn-inputmask").inputmask("999-99-9999"),
+                $(".isbn-inputmask").inputmask("999-99-999-9999-9"),
+                $(".currency-inputmask").inputmask("$9999"),
+                $(".percentage-inputmask").inputmask("99%"),
+                $(".decimal-inputmask").inputmask({
+                    alias: "decimal",
+                    radixPoint: "."
+                }),
+
+                $(".email-inputmask").inputmask({
+                    mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[*{2,6}][*{1,2}].*{1,}[.*{2,6}][.*{1,2}]",
+                    greedy: !1,
+                    onBeforePaste: function(n, a) {
+                        return (e = e.toLowerCase()).replace("mailto:", "")
+                    },
+                    definitions: {
+                        "*": {
+                            validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~/-]",
+                            cardinality: 1,
+                            casing: "lower"
+                        }
+                    }
+                })
+        });
+    </script>
 </body>
 
 </html>
