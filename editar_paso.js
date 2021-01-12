@@ -17,7 +17,6 @@ var database = firebase.database();
 var ref = firebase.database().ref('/datos/0/Table/0/Pasos');
 var indexPaso = 0;
 const idPasoDeseado = localStorage.getItem("idElemento");
-console.log(indexPaso);
 
 ref.on('value', (snapshot) => {
     var i = 0;
@@ -25,9 +24,9 @@ ref.on('value', (snapshot) => {
 
     snapshot.forEach(element => {
         let id = element.val().ID;
-        let nombre = element.val().Nombre;
 
         if (idPasoDeseado === id) {
+            let nombre = element.val().Nombre;
             $('#nombrePaso').val(nombre);
             indexPaso = i;
         }
@@ -40,8 +39,6 @@ ref.on('value', (snapshot) => {
 
 function guardarCambios() {
     let nombre = $('#nombrePaso').val();
-
-    console.log(indexPaso);
 
     firebase.database().ref(`/datos/0/Table/0/Pasos/${indexPaso}`).update({
         Nombre: nombre,

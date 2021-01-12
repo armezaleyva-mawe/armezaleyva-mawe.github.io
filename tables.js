@@ -26,15 +26,17 @@ ref.on('value', (snapshot) => {
     snapshot.forEach(element => {
         let id = element.val().ID;
         let nombre = element.val().Nombre;
+        const auxI = i;
 
         if (!setPasos.has(id)) {
             i++;
+
             setPasos.add(id);
 
             generarCelda(
                 $('#table-pasos')[0], [i, nombre],
                 function(event) {
-                    editarElemento(id, i, "editar_paso.html");
+                    editarElemento(id, [auxI], "editar_paso.html");
                     event.preventDefault();
                 }
             );
@@ -45,15 +47,17 @@ ref.on('value', (snapshot) => {
             subPasos.forEach(subPaso => {
                 let idSubpaso = subPaso.ID;
                 let nombreSubpaso = subPaso.Nombre;
+                const auxJ = j;
 
                 if (!setSubpasos.has(idSubpaso)) {
                     j++;
+
                     setSubpasos.add(idSubpaso);
 
                     generarCelda(
                         $('#table-subpasos')[0], [j, nombre, nombreSubpaso],
                         function(event) {
-                            editarElemento(idSubpaso, j, "editar_subpaso.html");
+                            editarElemento(idSubpaso, [auxI, auxJ], "editar_subpaso.html");
                             event.preventDefault();
                         }
                     );
@@ -66,6 +70,7 @@ ref.on('value', (snapshot) => {
 
                         if (!setControles.has(idControl)) {
                             k++;
+                            const auxK = k - 1;
                             let tipo = control.Tipo;
                             let etiqueta = control.Etiqueta;
                             let valor = control.Valor;
@@ -74,7 +79,7 @@ ref.on('value', (snapshot) => {
                             generarCelda(
                                 $('#table-controles')[0], [k, nombre, nombreSubpaso, tipo, etiqueta, valor, valorDefault],
                                 function(event) {
-                                    editarElemento(idControl, k, "editar_control.html");
+                                    editarElemento(idControl, [auxI, auxJ, auxK], "editar_control.html");
                                     event.preventDefault();
                                 }
                             );
@@ -117,9 +122,13 @@ function generarCelda(table, listaDatos, onEdit) {
     cell.appendChild(iconoEditar);
 }
 
-function editarElemento(idElemento, i, url) {
+function editarElemento(idElemento, listaIndices, url) {
     localStorage.setItem("idElemento", idElemento);
-    localStorage.setItem("indexElemento", i);
+
+    for (var i = 0; i < listaIndices.length; i++) {
+        localStorage.setItem(`indexElemento${i}`, listaIndices[i]);
+    }
+
     window.open(url, "_self");
 }
 
