@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Proceso del Servicio</title>
+    <title>Crear Pasos</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -22,30 +22,22 @@
             <div class="col-xl-12">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Pasos</h5>
-                            <div class="card-body">
-                                <table id="table-pasos" class="table table-hover"></table>
-                            </div>
+                        <div class="section-block" id="basicform">
+                            <h3 class="section-title">Editar Paso</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Subpasos</h5>
+                            <h5 class="card-header">Editar Paso</h5>
                             <div class="card-body">
-                                <table id="table-subpasos" class="table table-hover"></table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Controles de Forma</h5>
-                            <div class="card-body">
-                                <table id="table-controles" class="table table-hover"></table>
+                                <div id="exito-paso" class="alert alert-success" role="alert">
+                                    El paso fue editado con éxito
+                                </div>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nombrePaso" class="col-form-label">Nombre:</label>
+                                        <input id="nombrePaso" type="text" class="form-control">
+                                    </div>
+                                    <a id="btn-paso" href="#exito-paso" class="btn btn-danger" onclick="guardarCambios()">Guardar cambios</a>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -62,7 +54,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
 
-    <script src="tables.js"></script>
+    <script src="editar_paso.js"></script>
 </body>
 
 </html>

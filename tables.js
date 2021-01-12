@@ -31,7 +31,13 @@ ref.on('value', (snapshot) => {
             i++;
             setPasos.add(id);
 
-            generarCelda($('#table-pasos')[0], [i, nombre]);
+            generarCelda(
+                $('#table-pasos')[0], [i, nombre],
+                function(event) {
+                    editarElemento(id, i, "editar_paso.html");
+                    event.preventDefault();
+                }
+            );
         }
 
         let subPasos = element.val().SubPasos;
@@ -44,7 +50,13 @@ ref.on('value', (snapshot) => {
                     j++;
                     setSubpasos.add(idSubpaso);
 
-                    generarCelda($('#table-subpasos')[0], [j, nombre, nombreSubpaso]);
+                    generarCelda(
+                        $('#table-subpasos')[0], [j, nombre, nombreSubpaso],
+                        function(event) {
+                            editarElemento(idSubpaso, j, "editar_subpaso.html");
+                            event.preventDefault();
+                        }
+                    );
                 }
 
                 let controles = subPaso.ControlesForma;
@@ -59,7 +71,13 @@ ref.on('value', (snapshot) => {
                             let valor = control.Valor;
                             let valorDefault = control.ValorDefault;
 
-                            generarCelda($('#table-controles')[0], [k, nombre, nombreSubpaso, tipo, etiqueta, valor, valorDefault]);
+                            generarCelda(
+                                $('#table-controles')[0], [k, nombre, nombreSubpaso, tipo, etiqueta, valor, valorDefault],
+                                function(event) {
+                                    editarElemento(idControl, k, "editar_control.html");
+                                    event.preventDefault();
+                                }
+                            );
                         }
                     });
                 }
@@ -82,7 +100,7 @@ function generarHeaderTabla(table, listaHeaders) {
     });
 }
 
-function generarCelda(table, listaDatos) {
+function generarCelda(table, listaDatos, onEdit) {
     let row = table.insertRow();
 
     listaDatos.forEach(dato => {
@@ -90,6 +108,19 @@ function generarCelda(table, listaDatos) {
         let text = document.createTextNode(dato);
         cell.appendChild(text);
     });
+
+    let cell = row.insertCell();
+    let iconoEditar = document.createElement("i");
+    iconoEditar.classList.add("fas");
+    iconoEditar.classList.add("fa-edit");
+    iconoEditar.onclick = onEdit;
+    cell.appendChild(iconoEditar);
+}
+
+function editarElemento(idElemento, i, url) {
+    localStorage.setItem("idElemento", idElemento);
+    localStorage.setItem("indexElemento", i);
+    window.open(url, "_self");
 }
 
 generarHeaderTabla($('#table-pasos')[0], ["#", "Nombre"]);
