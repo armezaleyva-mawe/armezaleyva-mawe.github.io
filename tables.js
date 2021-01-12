@@ -70,6 +70,9 @@ ref.on('value', (snapshot) => {
 
                         if (!setControles.has(idControl)) {
                             k++;
+
+                            setControles.add(idControl);
+
                             const auxK = k - 1;
                             let tipo = control.Tipo;
                             let etiqueta = control.Etiqueta;

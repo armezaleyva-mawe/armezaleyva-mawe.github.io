@@ -17,27 +17,69 @@
 </head>
 
 <body>
-    <div class="container dashboard-content">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="section-block" id="basicform">
-                            <h3 class="section-title">Editar Paso</h3>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-header">Editar Paso</h5>
-                            <div class="card-body">
-                                <div id="exito-paso" class="alert alert-success" role="alert">
-                                    El paso fue editado con éxito
-                                </div>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="nombrePaso" class="col-form-label">Nombre:</label>
-                                        <input id="nombrePaso" type="text" class="form-control">
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html"><img class="img-fluid pr-4" src="assets/images/logo_mirage.png" alt="Logo mirage" style="height: 36px;">Servicio Técnico</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="nav-left-sidebar">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Crear Pasos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tablas.html"><i class="fas fa-fw fa-table"></i>Proceso del servicio</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="container dashboard-content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="basicform">
+                                <h3 class="section-title">Editar Paso</h3>
+                            </div>
+                            <div class="card">
+                                <h5 class="card-header">Editar Paso</h5>
+                                <div class="card-body">
+                                    <div id="exito-paso" class="alert alert-success" role="alert">
+                                        El paso fue editado con éxito
                                     </div>
-                                    <a id="btn-paso" href="#exito-paso" class="btn btn-danger" onclick="guardarCambios()">Guardar cambios</a>
-                                </form>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombrePaso" class="col-form-label">Nombre:</label>
+                                            <input id="nombrePaso" type="text" class="form-control">
+                                        </div>
+                                        <a id="btn-paso" href="#exito-paso" class="btn btn-danger" onclick="guardarCambios()">Guardar cambios</a>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

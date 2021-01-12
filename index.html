@@ -17,108 +17,151 @@
 </head>
 
 <body>
-    <div class="container dashboard-content">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="section-block" id="basicform">
-                            <h3 class="section-title">Nuevo Paso</h3>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-header">Crear Paso</h5>
-                            <div class="card-body">
-                                <div id="exito-paso" class="alert alert-success" role="alert">
-                                    El paso fue agregado con éxito
-                                </div>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="nombrePaso" class="col-form-label">Nombre:</label>
-                                        <input id="nombrePaso" type="text" class="form-control">
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html"><img class="img-fluid pr-4" src="assets/images/logo_mirage.png" alt="Logo mirage" style="height: 36px;">Servicio Técnico</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="nav-left-sidebar">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#"><i class="fab fa-fw fa-wpforms"></i>Crear Pasos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tablas.html"><i class="fas fa-fw fa-table"></i>Proceso del servicio</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dashboard-wrapper">
+        <div class="container dashboard-content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="basicform">
+                                <h3 id="crear-paso" class="section-title">Nuevo Paso</h3>
+                            </div>
+                            <div class="card">
+                                <h5 class="card-header">Crear Paso</h5>
+                                <div class="card-body">
+                                    <div id="exito-paso" class="alert alert-success" role="alert">
+                                        El paso fue agregado con éxito
                                     </div>
-                                    <a id="btn-paso" href="#exito-paso" class="btn btn-danger" onclick="crearPaso()">Crear paso</a>
-                                </form>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nombrePaso" class="col-form-label">Nombre:</label>
+                                            <input id="nombrePaso" type="text" class="form-control">
+                                        </div>
+                                        <a id="btn-paso" href="#crear-paso" class="btn btn-danger" onclick="crearPaso()">Crear paso</a>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="section-block" id="basicform">
-                            <h3 class="section-title">Nuevo Subpaso</h3>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-header">Crear Subpaso</h5>
-                            <div class="card-body">
-                                <div id="exito-subpaso" class="alert alert-success" role="alert">
-                                    El subpaso fue agregado con éxito
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="basicform">
+                                <h3 class="section-title">Nuevo Subpaso</h3>
+                            </div>
+                            <div class="card">
+                                <h5 class="card-header">Crear Subpaso</h5>
+                                <div class="card-body">
+                                    <div id="exito-subpaso" class="alert alert-success" role="alert">
+                                        El subpaso fue agregado con éxito
+                                    </div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="paso">Paso:</label>
+                                            <select class="form-control" id="paso">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nombreSubpaso" class="col-form-label">Nombre:</label>
+                                            <input id="nombreSubpaso" type="text" class="form-control">
+                                        </div>
+                                        <a id="btn-subpaso" href="#btn-paso" class="btn btn-danger" onclick="crearSubpaso()">Crear subpaso</a>
+                                    </form>
                                 </div>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="paso">Paso:</label>
-                                        <select class="form-control" id="paso">
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nombreSubpaso" class="col-form-label">Nombre:</label>
-                                        <input id="nombreSubpaso" type="text" class="form-control">
-                                    </div>
-                                    <a id="btn-subpaso" href="#btn-paso" class="btn btn-danger" onclick="crearSubpaso()">Crear subpaso</a>
-                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
 
 
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="section-block" id="basicform">
-                            <h3 class="section-title">Nuevo Control de Forma</h3>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-header">Crear Control de Forma</h5>
-                            <div class="card-body">
-                                <div id="exito-control" class="alert alert-success" role="alert">
-                                    El control fue agregado con éxito
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="basicform">
+                                <h3 class="section-title">Nuevo Control de Forma</h3>
+                            </div>
+                            <div class="card">
+                                <h5 class="card-header">Crear Control de Forma</h5>
+                                <div class="card-body">
+                                    <div id="exito-control" class="alert alert-success" role="alert">
+                                        El control fue agregado con éxito
+                                    </div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="pasoControl">Paso:</label>
+                                            <select class="form-control" id="pasoControl">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subpaso">Subpaso:</label>
+                                            <select class="form-control" id="subpaso">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tipoControl">Tipo:</label>
+                                            <select class="form-control" id="tipoControl">
+                                                <option>Texto</option>
+                                                <option>Etiqueta</option>
+                                                <option>Numero</option>
+                                                <option>Camara/Imagen</option>
+                                                <option>Checkbox</option>
+                                                <option>Calificacion</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="etiquetaControl" class="col-form-label">Etiqueta:</label>
+                                            <input id="etiquetaControl" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valorControl" class="col-form-label">Valor:</label>
+                                            <input id="valorControl" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valorDefaultControl" class="col-form-label">Valor default:</label>
+                                            <input id="valorDefaultControl" type="text" class="form-control">
+                                        </div>
+                                        <a id="btn-control" href="#btn-control" class="btn btn-danger" onclick="crearControl()">Crear control de forma</a>
+                                    </form>
                                 </div>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="pasoControl">Paso:</label>
-                                        <select class="form-control" id="pasoControl">
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="subpaso">Subpaso:</label>
-                                        <select class="form-control" id="subpaso">
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tipoControl">Tipo:</label>
-                                        <select class="form-control" id="tipoControl">
-                                            <option>Texto</option>
-                                            <option>Etiqueta</option>
-                                            <option>Numero</option>
-                                            <option>Camara/Imagen</option>
-                                            <option>Checkbox</option>
-                                            <option>Calificacion</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="etiquetaControl" class="col-form-label">Etiqueta:</label>
-                                        <input id="etiquetaControl" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="valorControl" class="col-form-label">Valor:</label>
-                                        <input id="valorControl" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="valorDefaultControl" class="col-form-label">Valor default:</label>
-                                        <input id="valorDefaultControl" type="text" class="form-control">
-                                    </div>
-                                    <a id="btn-control" href="#btn-control" class="btn btn-danger" onclick="crearControl()">Crear control de forma</a>
-                                </form>
                             </div>
                         </div>
                     </div>

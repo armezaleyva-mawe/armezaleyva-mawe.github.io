@@ -6,3 +6,27 @@
 .btn-danger {
     background-color: #ff404a;
 }
+
+.bg-mirage {
+    background-color: #ff404a !important;
+}
+
+.sidebar-dark {
+    background-color: #ff404a !important;
+    color: white;
+}
+
+.sidebar-dark * {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: #71748d;
+    font-weight: 200;
+    text-transform: none;
+    transition: ease-in-out 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #ff404a;
+}

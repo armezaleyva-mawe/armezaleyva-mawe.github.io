@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Editar Subpaso</title>
+    <title>Editar Control de Forma</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -64,20 +64,39 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="section-block" id="basicform">
-                                <h3 class="section-title">Editar Subpaso</h3>
+                                <h3 class="section-title">Editar Control de Forma</h3>
                             </div>
                             <div class="card">
-                                <h5 class="card-header">Editar Subpaso</h5>
+                                <h5 class="card-header">Editar Control de Forma</h5>
                                 <div class="card-body">
-                                    <div id="exito-subpaso" class="alert alert-success" role="alert">
-                                        El subpaso fue editado con éxito
+                                    <div id="exito-control" class="alert alert-success" role="alert">
+                                        El control de forma fue editado con éxito
                                     </div>
                                     <form>
                                         <div class="form-group">
-                                            <label for="nombreSubpaso" class="col-form-label">Nombre:</label>
-                                            <input id="nombreSubpaso" type="text" class="form-control">
+                                            <label for="tipoControl">Tipo:</label>
+                                            <select class="form-control" id="tipoControl">
+                                                <option>Texto</option>
+                                                <option>Etiqueta</option>
+                                                <option>Numero</option>
+                                                <option>Camara/Imagen</option>
+                                                <option>Checkbox</option>
+                                                <option>Calificacion</option>
+                                            </select>
                                         </div>
-                                        <a id="btn-paso" href="#exito-subpaso" class="btn btn-danger" onclick="guardarCambios()">Guardar cambios</a>
+                                        <div class="form-group">
+                                            <label for="etiquetaControl" class="col-form-label">Etiqueta:</label>
+                                            <input id="etiquetaControl" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valorControl" class="col-form-label">Valor:</label>
+                                            <input id="valorControl" type="text" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valorDefaultControl" class="col-form-label">Valor default:</label>
+                                            <input id="valorDefaultControl" type="text" class="form-control">
+                                        </div>
+                                        <a id="btn-paso" href="#exito-control" class="btn btn-danger" onclick="guardarCambios()">Guardar cambios</a>
                                     </form>
                                 </div>
                             </div>
@@ -96,7 +115,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
 
-    <script src="editar_subpaso.js"></script>
+    <script src="editar_control.js"></script>
 </body>
 
 </html>

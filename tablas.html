@@ -17,35 +17,80 @@
 </head>
 
 <body>
-    <div class="container dashboard-content">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Pasos</h5>
-                            <div class="card-body">
-                                <table id="table-pasos" class="table table-hover"></table>
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html"><img class="img-fluid pr-4" src="assets/images/logo_mirage.png" alt="Logo mirage" style="height: 36px;">Servicio Técnico</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="nav-left-sidebar">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="index.html"><i class="fab fa-fw fa-wpforms"></i>Crear Pasos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><i class="fas fa-fw fa-table"></i>Proceso del servicio</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <div class="container dashboard-content">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="basicform">
+                                <h3 class="section-title">Proceso del Servicio</h3>
+                            </div>
+                            <div class="card">
+                                <h5 class="card-header">Pasos</h5>
+                                <div class="card-body">
+                                    <table id="table-pasos" class="table table-hover"></table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Subpasos</h5>
-                            <div class="card-body">
-                                <table id="table-subpasos" class="table table-hover"></table>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Subpasos</h5>
+                                <div class="card-body">
+                                    <table id="table-subpasos" class="table table-hover"></table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h5 class="card-header">Controles de Forma</h5>
-                            <div class="card-body">
-                                <table id="table-controles" class="table table-hover"></table>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Controles de Forma</h5>
+                                <div class="card-body">
+                                    <table id="table-controles" class="table table-hover"></table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -53,6 +98,7 @@
             </div>
         </div>
     </div>
+
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
