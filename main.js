@@ -1,3 +1,7 @@
+$('#exito-paso').hide();
+$('#exito-subpaso').hide();
+$('#exito-control').hide();
+
 var firebaseConfig = {
     apiKey: "AIzaSyBO3GulC3zCUcKzY60TjTGLnlf7nSEInbU",
     authDomain: "api-simulada-servicio-tecnico.firebaseapp.com",
@@ -18,10 +22,6 @@ var hashmapPasos = {};
 var hashNumSubPasos = {};
 var hashmapSubPasos = {};
 var hashNumControles = {};
-
-$('#exito-paso').hide();
-$('#exito-subpaso').hide();
-$('#exito-control').hide();
 
 ref.on('value', (snapshot) => {
     const data = snapshot.val();
@@ -70,7 +70,7 @@ ref.on('value', (snapshot) => {
                     hashmapSubPasos[id] = numSubPasos - 1;
                 }
 
-                let controles = subPaso.ControlesForma
+                let controles = subPaso.ControlesForma;
                 if (controles != undefined) {
                     let numControles = 0;
                     controles.forEach(control => {

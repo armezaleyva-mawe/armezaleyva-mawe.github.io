@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Crear Pasos</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                                         <label for="nombrePaso" class="col-form-label">Nombre:</label>
                                         <input id="nombrePaso" type="text" class="form-control">
                                     </div>
-                                    <a id="btn-paso" href="#btn-paso" class="btn btn-danger" onclick="crearPaso()">Crear paso</a>
+                                    <a id="btn-paso" href="#exito-paso" class="btn btn-danger" onclick="crearPaso()">Crear paso</a>
                                 </form>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                         <label for="nombreSubpaso" class="col-form-label">Nombre:</label>
                                         <input id="nombreSubpaso" type="text" class="form-control">
                                     </div>
-                                    <a id="btn-subpaso" href="#btn-subpaso" class="btn btn-danger" onclick="crearSubpaso()">Crear subpaso</a>
+                                    <a id="btn-subpaso" href="#btn-paso" class="btn btn-danger" onclick="crearSubpaso()">Crear subpaso</a>
                                 </form>
                             </div>
                         </div>
@@ -140,40 +140,6 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-database.js"></script>
     <script src="main.js"></script>
-    <script>
-        $(function(e) {
-            "use strict";
-            $(".date-inputmask").inputmask("dd/mm/yyyy"),
-                $(".phone-inputmask").inputmask("(999) 999-9999"),
-                $(".international-inputmask").inputmask("+9(999)999-9999"),
-                $(".xphone-inputmask").inputmask("(999) 999-9999 / x999999"),
-                $(".purchase-inputmask").inputmask("aaaa 9999-****"),
-                $(".cc-inputmask").inputmask("9999 9999 9999 9999"),
-                $(".ssn-inputmask").inputmask("999-99-9999"),
-                $(".isbn-inputmask").inputmask("999-99-999-9999-9"),
-                $(".currency-inputmask").inputmask("$9999"),
-                $(".percentage-inputmask").inputmask("99%"),
-                $(".decimal-inputmask").inputmask({
-                    alias: "decimal",
-                    radixPoint: "."
-                }),
-
-                $(".email-inputmask").inputmask({
-                    mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[*{2,6}][*{1,2}].*{1,}[.*{2,6}][.*{1,2}]",
-                    greedy: !1,
-                    onBeforePaste: function(n, a) {
-                        return (e = e.toLowerCase()).replace("mailto:", "")
-                    },
-                    definitions: {
-                        "*": {
-                            validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~/-]",
-                            cardinality: 1,
-                            casing: "lower"
-                        }
-                    }
-                })
-        });
-    </script>
 </body>
 
 </html>
