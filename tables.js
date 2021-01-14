@@ -34,9 +34,13 @@ ref.on('value', (snapshot) => {
             setPasos.add(id);
 
             generarCelda(
-                $('#table-pasos')[0], [i, nombre],
+                id, $('#table-pasos')[0], [i, nombre],
                 function(event) {
                     editarElemento(id, [auxI], "editar_paso.html");
+                    event.preventDefault();
+                },
+                function(event) {
+                    borrarElemento([auxI], id);
                     event.preventDefault();
                 }
             );
@@ -55,9 +59,13 @@ ref.on('value', (snapshot) => {
                     setSubpasos.add(idSubpaso);
 
                     generarCelda(
-                        $('#table-subpasos')[0], [j, nombre, nombreSubpaso],
+                        idSubpaso, $('#table-subpasos')[0], [j, nombre, nombreSubpaso],
                         function(event) {
                             editarElemento(idSubpaso, [auxI, auxJ], "editar_subpaso.html");
+                            event.preventDefault();
+                        },
+                        function(event) {
+                            borrarElemento([auxI, auxJ], idSubpaso);
                             event.preventDefault();
                         }
                     );
@@ -80,9 +88,13 @@ ref.on('value', (snapshot) => {
                             let valorDefault = control.ValorDefault;
 
                             generarCelda(
-                                $('#table-controles')[0], [k, nombre, nombreSubpaso, tipo, etiqueta, valor, valorDefault],
+                                idControl, $('#table-controles')[0], [k, nombre, nombreSubpaso, tipo, etiqueta, valor, valorDefault],
                                 function(event) {
                                     editarElemento(idControl, [auxI, auxJ, auxK], "editar_control.html");
+                                    event.preventDefault();
+                                },
+                                function(event) {
+                                    borrarElemento([auxI, auxJ, auxK], idControl);
                                     event.preventDefault();
                                 }
                             );
@@ -100,6 +112,9 @@ function generarHeaderTabla(table, listaHeaders) {
     let thead = table.createTHead();
     let row = thead.insertRow();
 
+    listaHeaders.push("");
+    listaHeaders.push("");
+
     listaHeaders.forEach(header => {
         let th = document.createElement("th");
         let text = document.createTextNode(header);
@@ -108,8 +123,9 @@ function generarHeaderTabla(table, listaHeaders) {
     });
 }
 
-function generarCelda(table, listaDatos, onEdit) {
+function generarCelda(id, table, listaDatos, onEdit, onDelete) {
     let row = table.insertRow();
+    row.id = id;
 
     listaDatos.forEach(dato => {
         let cell = row.insertCell();
@@ -117,12 +133,19 @@ function generarCelda(table, listaDatos, onEdit) {
         cell.appendChild(text);
     });
 
-    let cell = row.insertCell();
+    let celdaEditar = row.insertCell();
     let iconoEditar = document.createElement("i");
     iconoEditar.classList.add("fas");
     iconoEditar.classList.add("fa-edit");
     iconoEditar.onclick = onEdit;
-    cell.appendChild(iconoEditar);
+    celdaEditar.appendChild(iconoEditar);
+
+    let celdaBorrar = row.insertCell();
+    let iconoBorrar = document.createElement("i");
+    iconoBorrar.classList.add("fas");
+    iconoBorrar.classList.add("fa-trash");
+    iconoBorrar.onclick = onDelete;
+    celdaBorrar.appendChild(iconoBorrar);
 }
 
 function editarElemento(idElemento, listaIndices, url) {
@@ -133,6 +156,18 @@ function editarElemento(idElemento, listaIndices, url) {
     }
 
     window.open(url, "_self");
+}
+
+function borrarElemento(listaIndices, id) {
+    if (listaIndices.length == 1) {
+        firebase.database().ref(`/datos/0/Table/0/Pasos/${listaIndices[0]}`).remove();
+    } else if (listaIndices.length == 2) {
+        firebase.database().ref(`/datos/0/Table/0/Pasos/${listaIndices[0]}/SubPasos/${listaIndices[1]}`).remove();
+    } else if (listaIndices.length == 3) {
+        firebase.database().ref(`/datos/0/Table/0/Pasos/${listaIndices[0]}/SubPasos/${listaIndices[1]}/ControlesForma/${listaIndices[2]}`).remove();
+    }
+
+    $(`#${id}`).remove();
 }
 
 generarHeaderTabla($('#table-pasos')[0], ["#", "Nombre"]);
