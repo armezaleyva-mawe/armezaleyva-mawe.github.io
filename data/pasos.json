@@ -40,13 +40,13 @@
                             "Deshabilitado": false,
                             "EspacioPxControles": 4,
                             "ControlesForma": [{
-                                    "ID": "FE81C2EC-D8C6-4192-B1D8-882FC93F5289",
+                                    "ID": "FE81C2EC-D8C6-4192-B1D8-882FC43F5281",
                                     "Orden": 1,
                                     "Nombre": "txtItemnmbr",
                                     "ValorDefault": "",
                                     "Valor": "",
                                     "Tipo": "Texto",
-                                    "Etiqueta": "ID Artículo",
+                                    "Etiqueta": "ID Artículoooo",
                                     "Requerido": true,
                                     "SoloLectura": false
                                 },
